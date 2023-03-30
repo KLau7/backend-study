@@ -1,0 +1,18 @@
+POST  http://127.0.0.1:3000/api/v1/users/signup
+content-type: application/json
+
+{
+    "name": "Sunny",
+    "email": "sunny-fung@gmail.com",
+    "password": "pass1234",
+    "passwordConfirm": "pass1234"
+}
+###
+POST  http://127.0.0.1:3000/api/v1/users/login
+content-type: application/json
+
+{
+    "email": "sunny-fung@gmail.com",
+    "password": "pass1234"
+}
+###

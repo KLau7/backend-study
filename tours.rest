@@ -1,0 +1,64 @@
+@jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDdkNzU0NWQzZTcwYzAwMDgzOWI1MSIsImlhdCI6MTY3ODIzNTQ4NiwiZXhwIjoxNjg2MDExNDg2fQ.0MjXzWgVqFP3j8D-uTzkt8ZWc1KO_xz_GYpv9ziPe-A
+@jwt_header = Authorization: Bearer {{jwt}}
+
+GET http://127.0.0.1:3000/api/v1/tours?limit=100
+{{jwt_header}}
+
+###
+// SORTING
+GET http://127.0.0.1:3000/api/v1/tours?price[lte]=1500&sort=-price,-ratingsQuantity&fields=name
+
+###
+// PAGINATION
+GET http://127.0.0.1:3000/api/v1/tours?page=2&limit=3
+
+###
+// GET BY ID
+GET http://127.0.0.1:3000/api/v1/tours/6400edb0713a33611a003651
+
+###
+// TOP 5 TOURS
+GET http://127.0.0.1:3000/api/v1/tours/top-5
+
+###
+// STATS
+GET http://127.0.0.1:3000/api/v1/tours/stats
+
+###
+// MONTHLY PLAN
+GET http://127.0.0.1:3000/api/v1/tours/monthly-plan/2021
+
+###
+PATCH  http://127.0.0.1:3000/api/v1/tours/63fe46969e2c374a0b0dbccc
+content-type: application/json
+
+{
+    "price": 498
+}
+
+###
+POST http://127.0.0.1:3000/api/v1/tours
+content-type: application/json
+
+{
+    "name": "The Snow Adventurers",
+    "duration": 14,
+    "maxGroupSize": 8,
+    "difficulty": "difficult",
+    "ratingsAverage": 6,
+    "ratingsQuantity": 28,
+    "price": 2997,
+    "summary": "Surfing, skating, parajumping, rock climbing and more, all in one tour",
+    "description": "Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nVoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur!",
+    "imageCover": "tour-6-cover.jpg",
+    "images": ["tour-6-1.jpg", "tour-6-2.jpg", "tour-6-3.jpg"],
+    "startDates": ["2021-07-19,10:00", "2021-09-06,10:00", "2022-03-18,10:00"]
+}
+
+###
+DELETE  http://127.0.0.1:3000/api/v1/tours/6400e66d562ad3473ea90942
+{{jwt_header}}
+
+### UNDEFINED ROUTE
+GET  http://127.0.0.1:3000/api/v1/tourss
+ 
