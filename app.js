@@ -133,7 +133,7 @@ app.use(
 // ------------------------ //
 
 // ROUTES
-app.use('/', viewRouter);
+// app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
