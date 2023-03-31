@@ -134,6 +134,11 @@ app.use(
 
 // ROUTES
 // app.use('/', viewRouter);
+app.get('/', (_, res) => {
+  res.status(200).json({
+    message: 'success',
+  });
+});
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
