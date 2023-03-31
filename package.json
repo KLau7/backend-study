@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "nodemon server.js",
-    "start:prod": "NODE_ENV=production nodemon server.js",
+    "start": "node server.js",
     "import-dev-data": "node dev-data/data/import-dev-data.js --import",
     "clear-db-data": "node dev-data/data/import-dev-data.js --delete",
     "debug": "ndb server.js"
@@ -24,11 +24,9 @@
     "mongoose": "^7.0.0",
     "morgan": "^1.10.0",
     "ndb": "^1.1.5",
-    "nodemon": "^2.0.20",
     "pug": "^3.0.2",
     "slugify": "^1.6.5",
     "validator": "^13.9.0",
-    "win-node-env": "^0.6.1",
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
@@ -40,7 +38,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.4",
+    "nodemon": "^2.0.20"
   },
   "engines": {
     "node": ">=18"
