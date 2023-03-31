@@ -2,7 +2,7 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "Learning node, express and mongoDB",
-  "main": "app.js",
+  "main": "server.js",
   "license": "MIT",
   "scripts": {
     "start:dev": "nodemon server.js",
