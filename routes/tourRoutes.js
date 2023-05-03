@@ -28,7 +28,7 @@ router.route('/monthly-plan/:year').get(getMonthlyPlan);
 
 router
   .route('/')
-  .get(protect, getAllTours)
+  .get(getAllTours)
   .post(protect, restrictTo('admin', 'lead-guide'), createTour);
 router
   .route('/:id')
